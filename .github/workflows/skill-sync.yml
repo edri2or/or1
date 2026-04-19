@@ -1,0 +1,12 @@
+name: Skill Auto-Sync to ripo-skills-main
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.claude/plugins/**/SKILL.md'
+
+jobs:
+  sync:
+    uses: edri2or/ripo-skills-main/.github/workflows/skill-sync-reusable.yml@main
+    secrets: inherit
