@@ -172,7 +172,7 @@ jobs:
 
       - name: Store Railway IDs as GitHub Secrets
         env:
-          GH_TOKEN: ${{ secrets.PUSH_TARGET_TOKEN }}
+          GH_TOKEN: ${{ steps.secrets.outputs.GITHUB_PAT_SECRETS_WRITE }}   # ADR 0010 — PUSH_TARGET_TOKEN deleted
           PROJECT_ID: ${{ steps.railway.outputs.project_id }}
           ENV_ID: ${{ steps.railway.outputs.env_id }}
         run: |
